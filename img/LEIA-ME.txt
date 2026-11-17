@@ -19,3 +19,6 @@ montra.jpg             -> Fundo da faixa final (montra / balcão)
 logo.jpg               -> Logótipo (navegação e rodapé)
 folar.jpg              -> Folar da Páscoa
 salgados.jpg           -> Pão recheado
+delicia-satelite.jpg   -> Delícia da Satélite
+panado.jpg             -> Pão com Panado
+montra-*.jpg           -> Galeria "A Nossa Montra"
