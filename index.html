@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Padaria e Pastelaria Satélite | Gafanha da Encarnação, Ílhavo</title>
+  <meta name="description" content="Padaria e Pastelaria Satélite na Gafanha da Encarnação, Ílhavo. Pão quente desde as 6h, pastéis de nata, broa de milho e de chouriço, café, sandes, hambúrgueres e pizzas. Aberto todos os dias das 06:00 às 21:00." />
+  <meta name="theme-color" content="#3E2723" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Padaria e Pastelaria Satélite — Gafanha da Encarnação" />
+  <meta property="og:description" content="Pão quente logo às 6h da manhã e os melhores pastéis de nata da Gafanha da Encarnação." />
+  <meta property="og:image" content="img/fachada.jpg" />
+  <meta property="og:locale" content="pt_PT" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cafe:   { DEFAULT: '#3E2723', light: '#5D4037' },
+            nata:   { DEFAULT: '#D97706', dark: '#B45309', light: '#FCD34D' },
+            creme:  '#FFFBEB',
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans:  ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Dados estruturados para o Google (negócio local) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Padaria e Pastelaria Satélite",
+    "image": "img/fachada.jpg",
+    "telephone": "+351234366423",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Professor Francisco Corujo, 139",
+      "addressLocality": "Gafanha da Encarnação",
+      "addressRegion": "Ílhavo",
+      "postalCode": "3830-524",
+      "addressCountry": "PT"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "06:00",
+      "closes": "21:00"
+    }],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.3", "reviewCount": "239" },
+    "paymentAccepted": "Multibanco, Cartão de crédito, Cartão de débito, MB Way, NFC",
+    "servesCuisine": ["Padaria", "Pastelaria", "Cafetaria"],
+    "sameAs": ["https://www.facebook.com/padariapastelariasatelite/"]
+  }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .grain {
+      background-image: radial-gradient(rgba(62,39,35,.06) 1px, transparent 1px);
+      background-size: 14px 14px;
+    }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body class="bg-creme text-cafe antialiased">
+
+  <!-- ===================== NAVEGAÇÃO FIXA ===================== -->
+  <header id="topo" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8" aria-label="Navegação principal">
+      <a href="#inicio" class="flex items-center gap-2.5">
+        <img src="img/logo.jpg" alt="Logótipo Família Satélite – Padaria e Pastelaria" class="h-12 w-12 rounded-full bg-white object-cover p-0.5 shadow-md ring-2 ring-white/70" />
+        <span class="leading-tight">
+          <span class="block font-serif text-xl font-bold nav-text text-white">Satélite</span>
+          <span class="block text-[11px] uppercase tracking-[0.18em] nav-subtext text-white/80">Padaria &amp; Pastelaria</span>
+        </span>
+      </a>
+
+      <ul class="hidden items-center gap-7 text-sm font-medium md:flex">
+        <li><a href="#casa" class="nav-link text-white/90 hover:text-nata-light transition">A Nossa Casa</a></li>
+        <li><a href="#especialidades" class="nav-link text-white/90 hover:text-nata-light transition">Especialidades</a></li>
+        <li><a href="#avaliacoes" class="nav-link text-white/90 hover:text-nata-light transition">Avaliações</a></li>
+        <li><a href="#onde-estamos" class="nav-link text-white/90 hover:text-nata-light transition">Onde Estamos</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <a href="tel:+351234366423"
+           class="inline-flex items-center gap-2 rounded-full bg-nata px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-nata/30 transition hover:bg-nata-dark focus:outline-none focus-visible:ring-4 focus-visible:ring-nata/40">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          <span class="hidden sm:inline">Ligar: 234 366 423</span>
+          <span class="sm:hidden">Ligar</span>
+        </a>
+        <button id="menu-btn" class="md:hidden grid h-10 w-10 place-items-center rounded-full nav-burger text-white hover:bg-white/10" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Menu mobile -->
+    <div id="menu-mobile" class="hidden md:hidden border-t border-cafe/10 bg-creme/95 backdrop-blur">
+      <ul class="space-y-1 px-4 py-4 text-base font-medium text-cafe">
+        <li><a href="#casa" class="block rounded-lg px-3 py-2 hover:bg-nata/10">A Nossa Casa</a></li>
+        <li><a href="#especialidades" class="block rounded-lg px-3 py-2 hover:bg-nata/10">Especialidades</a></li>
+        <li><a href="#avaliacoes" class="block rounded-lg px-3 py-2 hover:bg-nata/10">Avaliações</a></li>
+        <li><a href="#onde-estamos" class="block rounded-lg px-3 py-2 hover:bg-nata/10">Onde Estamos &amp; Horário</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section id="inicio" class="relative isolate flex min-h-[100svh] items-center overflow-hidden">
+      <img src="img/fachada.jpg"
+           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=2000&q=80';"
+           alt="Fachada e esplanada da Padaria e Pastelaria Satélite, na Rua Professor Francisco Corujo, Gafanha da Encarnação"
+           class="absolute inset-0 -z-20 h-full w-full object-cover object-[center_65%]" fetchpriority="high" />
+      <div class="absolute inset-0 -z-10 bg-gradient-to-br from-cafe/95 via-cafe/80 to-cafe/40"></div>
+
+      <div class="mx-auto w-full max-w-7xl px-4 pb-20 pt-32 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <div class="mb-6 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white backdrop-blur">
+            <span class="flex text-nata-light" aria-hidden="true">★★★★<span class="relative inline-block"><span class="text-white/30">★</span><span class="absolute inset-0 w-[30%] overflow-hidden">★</span></span></span>
+            <span><strong>4,3/5</strong> no Google · 239 avaliações</span>
+            <span class="hidden sm:inline text-white/40">|</span>
+            <span><strong>96%</strong> recomendam no Facebook</span>
+          </div>
+
+          <h1 class="font-serif text-4xl font-bold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
+            Pão quente logo às <span class="text-nata-light">6h da manhã</span> e os melhores pastéis de nata da Gafanha da Encarnação.
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-white/85 sm:text-xl">
+            Uma padaria e pastelaria de família onde o café é sempre fresco, a broa é caseira e cada cliente é recebido com um sorriso. Aberto todos os dias das 06:00 às 21:00.
+          </p>
+
+          <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+            <a href="tel:+351234366423" class="inline-flex items-center justify-center gap-2 rounded-full bg-nata px-7 py-4 text-base font-semibold text-white shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:bg-nata-dark">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+              Encomendar por telefone
+            </a>
+            <a href="#onde-estamos" class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/70 px-7 py-4 text-base font-semibold text-white transition hover:bg-white hover:text-cafe">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              Como chegar
+            </a>
+          </div>
+
+          <div class="mt-10 flex items-center gap-3 text-sm text-white/80">
+            <span id="estado-aberto" class="inline-flex items-center gap-2 rounded-full bg-black/25 px-3 py-1.5">
+              <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+              Todos os dias · 06:00 – 21:00
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#casa" class="absolute bottom-6 left-1/2 hidden -translate-x-1/2 text-white/70 hover:text-white sm:block" aria-label="Descer para A Nossa Casa">
+        <svg class="h-8 w-8 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <!-- ===================== FAIXA DE DESTAQUES ===================== -->
+    <section class="bg-cafe text-creme" aria-label="Destaques">
+      <div class="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 text-center sm:px-6 lg:grid-cols-4 lg:px-8">
+        <div><p class="font-serif text-3xl font-bold text-nata-light">06:00</p><p class="text-sm text-creme/75">Pão quente todas as manhãs</p></div>
+        <div><p class="font-serif text-3xl font-bold text-nata-light">7 dias</p><p class="text-sm text-creme/75">Abertos de segunda a domingo</p></div>
+        <div><p class="font-serif text-3xl font-bold text-nata-light">4,3★</p><p class="text-sm text-creme/75">239 avaliações no Google</p></div>
+        <div><p class="font-serif text-3xl font-bold text-nata-light">96%</p><p class="text-sm text-creme/75">Recomendam no Facebook</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== A NOSSA CASA ===================== -->
+    <section id="casa" class="grain scroll-mt-20 py-20 sm:py-28">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+        <div class="reveal relative">
+          <figure class="overflow-hidden rounded-3xl shadow-2xl shadow-cafe/20">
+            <img src="img/esplanada.jpg"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=1200&q=80';"
+                 alt="Fachada e esplanada da Padaria e Pastelaria Satélite, na Rua Professor Francisco Corujo"
+                 class="aspect-[4/5] w-full object-cover" loading="lazy" />
+            <figcaption class="sr-only">A nossa casa na Rua Professor Francisco Corujo, 139</figcaption>
+          </figure>
+          <figure class="absolute -bottom-8 -right-4 w-1/2 overflow-hidden rounded-2xl border-4 border-creme shadow-xl sm:-right-8">
+            <img src="img/meia-de-leite-nata.jpg"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80';"
+                 alt="Meia de leite, pastel de nata e croissant de chocolate da Satélite"
+                 class="aspect-square w-full object-cover" loading="lazy" />
+            <figcaption class="bg-white px-3 py-2 text-xs font-medium text-cafe/80">Meia de leite, pastel de nata &amp; croissant de chocolate</figcaption>
+          </figure>
+        </div>
+
+        <div class="reveal">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-nata">A Nossa Casa</p>
+          <h2 class="font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">O cheirinho a pão quente que acorda a Gafanha.</h2>
+          <div class="mt-6 space-y-4 text-lg leading-relaxed text-cafe/80">
+            <p>Na Satélite, o dia começa antes de o sol nascer. Às 6h já há pão a sair do forno, café acabado de tirar e a montra cheia de pastéis de nata ainda mornos.</p>
+            <p>Somos uma casa de família, e é assim que tratamos quem entra pela porta: pelo nome, com um sorriso e com a meia de leite tal e qual como gosta. Vizinhos da Gafanha da Encarnação, da Gafanha da Nazaré, de Ílhavo e quem vem a caminho da Costa Nova — aqui sentem-se em casa.</p>
+          </div>
+
+          <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+            <li class="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm">
+              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-nata/15 text-nata">☕</span>
+              <span><strong class="block">Café sempre fresco</strong><span class="text-sm text-cafe/70">Da bica à meia de leite</span></span>
+            </li>
+            <li class="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm">
+              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-nata/15 text-nata">🥖</span>
+              <span><strong class="block">Broa caseira</strong><span class="text-sm text-cafe/70">De milho e de chouriço</span></span>
+            </li>
+            <li class="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm">
+              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-nata/15 text-nata">☀️</span>
+              <span><strong class="block">Esplanada</strong><span class="text-sm text-cafe/70">Para os dias de sol</span></span>
+            </li>
+            <li class="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm">
+              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-nata/15 text-nata">🛍️</span>
+              <span><strong class="block">Takeaway rápido</strong><span class="text-sm text-cafe/70">Ligue e venha buscar</span></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ESPECIALIDADES ===================== -->
+    <section id="especialidades" class="scroll-mt-20 bg-white py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-nata">As Nossas Especialidades</p>
+          <h2 class="font-serif text-3xl font-bold sm:text-4xl lg:text-5xl">Do forno para a sua mesa, todos os dias.</h2>
+          <p class="mt-4 text-lg text-cafe/70">Pão, bolos e petiscos feitos com tempo e com carinho — como sempre se fez cá na terra.</p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="reveal mt-10 flex flex-wrap justify-center gap-2" role="tablist" aria-label="Categorias">
+          <button class="filtro rounded-full border border-cafe/15 px-5 py-2 text-sm font-semibold transition" data-filtro="todos" role="tab" aria-selected="true">Tudo</button>
+          <button class="filtro rounded-full border border-cafe/15 px-5 py-2 text-sm font-semibold transition" data-filtro="padaria" role="tab" aria-selected="false">Padaria Tradicional</button>
+          <button class="filtro rounded-full border border-cafe/15 px-5 py-2 text-sm font-semibold transition" data-filtro="pastelaria" role="tab" aria-selected="false">Pastelaria &amp; Cafetaria</button>
+          <button class="filtro rounded-full border border-cafe/15 px-5 py-2 text-sm font-semibold transition" data-filtro="refeicoes" role="tab" aria-selected="false">Refeições Rápidas</button>
+        </div>
+
+        <div id="grelha" class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+          <!-- PASTEL DE NATA — destaque -->
+          <article class="produto reveal group relative overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl sm:col-span-2 lg:col-span-1 lg:row-span-2" data-cat="pastelaria">
+            <div class="relative h-full min-h-[420px]">
+              <img src="img/pastel-de-nata.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1530610476181-d83430b64dcd?auto=format&fit=crop&w=1000&q=80';"
+                   alt="Pastéis de nata da Satélite acabados de sair do forno"
+                   class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-cafe via-cafe/40 to-transparent"></div>
+              <span class="absolute left-4 top-4 rounded-full bg-nata px-3 py-1 text-xs font-bold uppercase tracking-wide text-white shadow">🔥 Esgotam cedo!</span>
+              <div class="absolute inset-x-0 bottom-0 p-6 text-white">
+                <p class="text-xs font-semibold uppercase tracking-widest text-nata-light">A estrela da casa</p>
+                <h3 class="mt-1 font-serif text-3xl font-bold">Pastéis de Nata</h3>
+                <p class="mt-2 text-white/85">Massa estaladiça, creme aveludado e aquele toque de canela. São tão procurados que na maioria dos dias esgotam cedo — venha de manhã ou ligue a reservar.</p>
+                <a href="tel:+351234366423" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-nata-light hover:underline">Reservar por telefone →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pão quente -->
+          <article class="produto reveal group overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl" data-cat="padaria">
+            <div class="overflow-hidden">
+              <img src="img/pao-quente.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80';"
+                   alt="Pão acabado de cozer na Padaria Satélite" class="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-nata">Padaria Tradicional</p>
+              <h3 class="mt-1 font-serif text-2xl font-bold">Pão Quente Diário</h3>
+              <p class="mt-2 text-cafe/70">Fornadas a partir das 6h da manhã, para o pequeno-almoço chegar a casa ainda quentinho.</p>
+            </div>
+          </article>
+
+          <!-- Broa de milho -->
+          <article class="produto reveal group overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl" data-cat="padaria">
+            <div class="overflow-hidden">
+              <img src="img/broa-de-milho.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=900&q=80';"
+                   alt="Broas de milho caseiras da Padaria Satélite" class="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-nata">Padaria Tradicional</p>
+              <h3 class="mt-1 font-serif text-2xl font-bold">Broa de Milho &amp; Broa de Chouriço</h3>
+              <p class="mt-2 text-cafe/70">Caseiras, de côdea rija e miolo húmido. A de chouriço é a preferida de muitos clientes — e percebe-se porquê.</p>
+            </div>
+          </article>
+
+          <!-- Croissants -->
+          <article class="produto reveal group overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl" data-cat="pastelaria">
+            <div class="overflow-hidden">
+              <img src="img/croissants.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=80';"
+                   alt="Croissants da Pastelaria Satélite" class="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-nata">Pastelaria</p>
+              <h3 class="mt-1 font-serif text-2xl font-bold">Croissants</h3>
+              <p class="mt-2 text-cafe/70">Simples, com chocolate ou recheados com fiambre e queijo. O par perfeito para a meia de leite.</p>
+            </div>
+          </article>
+
+          <!-- Café -->
+          <article class="produto reveal group overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl" data-cat="pastelaria">
+            <div class="overflow-hidden">
+              <img src="img/cafe.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80';"
+                   alt="Galão com espuma e canela, servido ao balcão da Satélite" class="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-nata">Cafetaria</p>
+              <h3 class="mt-1 font-serif text-2xl font-bold">Café &amp; Meia de Leite</h3>
+              <p class="mt-2 text-cafe/70">Café Delta sempre fresco, tirado na hora — da bica ao galão com espuma e canela. Os nossos clientes dizem que é "o melhor das manhãs" — quem somos nós para discordar?</p>
+            </div>
+          </article>
+
+          <!-- Bolos de aniversário -->
+          <article class="produto reveal group overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl" data-cat="pastelaria">
+            <div class="overflow-hidden">
+              <img src="img/bolo-aniversario.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80';"
+                   alt="Bolo de aniversário personalizado com tema da quinta, feito na Pastelaria Satélite" class="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-nata">Por encomenda</p>
+              <h3 class="mt-1 font-serif text-2xl font-bold">Bolos de Aniversário</h3>
+              <p class="mt-2 text-cafe/70">Personalizados com o nome e o tema preferido — como este bolo da quinta, com a vaquinha, o celeiro e os animais.</p>
+              <a href="tel:+351234366423" class="mt-3 inline-flex text-sm font-semibold text-nata hover:underline">Encomendar: 234 366 423 →</a>
+            </div>
+          </article>
+
+          <!-- Bolos de comunhão -->
+          <article class="produto reveal group overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl" data-cat="pastelaria">
+            <div class="overflow-hidden">
+              <img src="img/bolo-comunhao.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80';"
+                   alt="Bolo de Primeira Comunhão decorado com terço de pérolas e cálice, feito na Pastelaria Satélite" class="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-nata">Por encomenda</p>
+              <h3 class="mt-1 font-serif text-2xl font-bold">Comunhões &amp; Festas de Família</h3>
+              <p class="mt-2 text-cafe/70">Bolos para os dias que ficam na memória: Primeira Comunhão, batizados e outras celebrações, decorados a preceito.</p>
+              <a href="tel:+351234366423" class="mt-3 inline-flex text-sm font-semibold text-nata hover:underline">Encomendar: 234 366 423 →</a>
+            </div>
+          </article>
+
+          <!-- Mini bolos -->
+          <article class="produto reveal group overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl" data-cat="pastelaria">
+            <div class="overflow-hidden">
+              <img src="img/bolos-ocasiao.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1612203985729-70726954388c?auto=format&fit=crop&w=900&q=80';"
+                   alt="Mini bolos red velvet do Dia dos Namorados, feitos na Pastelaria Satélite" class="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-nata">Datas especiais</p>
+              <h3 class="mt-1 font-serif text-2xl font-bold">Mini Bolos de Ocasião</h3>
+              <p class="mt-2 text-cafe/70">Para os dias mais doces do ano — como estes mini bolos red velvet que preparámos para o Dia dos Namorados.</p>
+            </div>
+          </article>
+
+          <!-- Folar da Páscoa -->
+          <article class="produto reveal group overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl" data-cat="padaria">
+            <div class="overflow-hidden">
+              <img src="img/folar.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=900&q=80';"
+                   alt="Folares da Páscoa com ovo, acabados de sair do forno da Satélite" class="aspect-[4/3] w-full object-cover object-center transition duration-700 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-nata">Época da Páscoa</p>
+              <h3 class="mt-1 font-serif text-2xl font-bold">Folar da Páscoa</h3>
+              <p class="mt-2 text-cafe/70">Massa doce entrançada à mão, com o ovo lá dentro, como manda a tradição.</p>
+            </div>
+          </article>
+
+          <!-- Salgados -->
+          <article class="produto reveal group overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl" data-cat="refeicoes">
+            <div class="overflow-hidden">
+              <img src="img/salgados.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80';"
+                   alt="Pão recheado com carne, queijo e pimento da Satélite" class="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-nata">Salgados da Casa</p>
+              <h3 class="mt-1 font-serif text-2xl font-bold">Pão Recheado</h3>
+              <p class="mt-2 text-cafe/70">Recheado com carne e queijo gratinado, com pimento por cima. Ótimo para um lanche reforçado.</p>
+            </div>
+          </article>
+
+          <!-- Sandes -->
+          <article class="produto reveal group overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl" data-cat="refeicoes">
+            <div class="overflow-hidden">
+              <img src="img/sandes.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80';"
+                   alt="Sandes variadas da Satélite" class="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-nata">Refeições Rápidas</p>
+              <h3 class="mt-1 font-serif text-2xl font-bold">Sandes Variadas</h3>
+              <p class="mt-2 text-cafe/70">No nosso pão do dia, com recheios para todos os gostos. Ideais para levar para a praia ou para o trabalho.</p>
+            </div>
+          </article>
+
+          <!-- Hambúrgueres -->
+          <article class="produto reveal group overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl" data-cat="refeicoes">
+            <div class="overflow-hidden">
+              <img src="img/hamburguer.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80';"
+                   alt="Hambúrguer feito na hora na Satélite" class="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-nata">Refeições Rápidas</p>
+              <h3 class="mt-1 font-serif text-2xl font-bold">Hambúrgueres</h3>
+              <p class="mt-2 text-cafe/70">Feitos na hora, suculentos e bem servidos. Uma refeição rápida que sabe a comida de verdade.</p>
+            </div>
+          </article>
+
+          <!-- Pizzas -->
+          <article class="produto reveal group overflow-hidden rounded-3xl bg-creme shadow-sm ring-1 ring-cafe/5 transition hover:-translate-y-1 hover:shadow-xl" data-cat="refeicoes">
+            <div class="overflow-hidden">
+              <img src="img/pizza.jpg"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80';"
+                   alt="Pizza feita na hora na Satélite" class="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-nata">Refeições Rápidas</p>
+              <h3 class="mt-1 font-serif text-2xl font-bold">Pizzas</h3>
+              <p class="mt-2 text-cafe/70">Massa estendida cá em casa e ao forno na hora. Para comer na esplanada ou levar para o jantar em família.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AVALIAÇÕES ===================== -->
+    <section id="avaliacoes" class="grain scroll-mt-20 py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal flex flex-col items-center gap-8 text-center lg:flex-row lg:items-end lg:justify-between lg:text-left">
+          <div class="max-w-2xl">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-nata">O Que Dizem de Nós</p>
+            <h2 class="font-serif text-3xl font-bold sm:text-4xl lg:text-5xl">Quem prova, volta. Palavra dos nossos clientes.</h2>
+          </div>
+          <div class="flex gap-4">
+            <div class="rounded-2xl bg-white px-6 py-4 text-center shadow-sm ring-1 ring-cafe/5">
+              <p class="font-serif text-4xl font-bold">4,3<span class="text-2xl text-nata">★</span></p>
+              <p class="text-sm text-cafe/70">Google · 239 avaliações</p>
+            </div>
+            <div class="rounded-2xl bg-white px-6 py-4 text-center shadow-sm ring-1 ring-cafe/5">
+              <p class="font-serif text-4xl font-bold">96<span class="text-2xl text-nata">%</span></p>
+              <p class="text-sm text-cafe/70">Recomendam no Facebook</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-2">
+          <figure class="reveal relative rounded-3xl bg-white p-8 shadow-sm ring-1 ring-cafe/5 transition hover:shadow-lg">
+            <span class="absolute right-8 top-4 font-serif text-7xl leading-none text-nata/15" aria-hidden="true">“</span>
+            <div class="text-lg text-nata" aria-label="5 estrelas em 5">★★★★★</div>
+            <blockquote class="mt-4 font-serif text-xl leading-relaxed">"Melhor pastelaria/padaria da Gafanha da Encarnação. Ótima equipa! O melhor das minhas manhãs!"</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3 text-sm font-medium text-cafe/70">
+              <span class="grid h-9 w-9 place-items-center rounded-full bg-[#4285F4]/10 font-bold text-[#4285F4]">G</span> Cliente Google
+            </figcaption>
+          </figure>
+
+          <figure class="reveal relative rounded-3xl bg-white p-8 shadow-sm ring-1 ring-cafe/5 transition hover:shadow-lg">
+            <span class="absolute right-8 top-4 font-serif text-7xl leading-none text-nata/15" aria-hidden="true">“</span>
+            <div class="text-lg text-nata" aria-label="5 estrelas em 5">★★★★★</div>
+            <blockquote class="mt-4 font-serif text-xl leading-relaxed">"O café e o Pastel de Nata são fantásticos, tão bons que costumam esgotar cedo na maioria dos dias."</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3 text-sm font-medium text-cafe/70">
+              <span class="grid h-9 w-9 place-items-center rounded-full bg-[#4285F4]/10 font-bold text-[#4285F4]">G</span> Cliente Google
+            </figcaption>
+          </figure>
+
+          <figure class="reveal relative rounded-3xl bg-white p-8 shadow-sm ring-1 ring-cafe/5 transition hover:shadow-lg">
+            <span class="absolute right-8 top-4 font-serif text-7xl leading-none text-nata/15" aria-hidden="true">“</span>
+            <div class="text-lg text-nata" aria-label="5 estrelas em 5">★★★★★</div>
+            <blockquote class="mt-4 font-serif text-xl leading-relaxed">"Adoro tudo! Desde a gerência aos funcionários são todos 5 estrelas. Pastéis sempre fresquinhos, pão delicioso, para não falar na broa de milho e de chouriço."</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3 text-sm font-medium text-cafe/70">
+              <span class="grid h-9 w-9 place-items-center rounded-full bg-[#1877F2]/10 font-bold text-[#1877F2]">f</span> Cliente Facebook
+            </figcaption>
+          </figure>
+
+          <figure class="reveal relative rounded-3xl bg-white p-8 shadow-sm ring-1 ring-cafe/5 transition hover:shadow-lg">
+            <span class="absolute right-8 top-4 font-serif text-7xl leading-none text-nata/15" aria-hidden="true">“</span>
+            <div class="text-lg text-nata" aria-label="5 estrelas em 5">★★★★★</div>
+            <blockquote class="mt-4 font-serif text-xl leading-relaxed">"Sem dúvida a melhor pastelaria da Gafanha da Encarnação com o melhor atendimento tanto por parte das funcionárias como dos patrões."</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3 text-sm font-medium text-cafe/70">
+              <span class="grid h-9 w-9 place-items-center rounded-full bg-[#4285F4]/10 font-bold text-[#4285F4]">G</span> Cliente Google
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="reveal mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href="https://www.google.com/maps/search/?api=1&query=Padaria+e+Pastelaria+Sat%C3%A9lite+Gafanha+da+Encarna%C3%A7%C3%A3o" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 rounded-full border border-cafe/20 bg-white px-6 py-3 text-sm font-semibold transition hover:border-nata hover:text-nata">
+            Ver todas as avaliações no Google →
+          </a>
+          <a href="https://www.facebook.com/padariapastelariasatelite/" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 rounded-full border border-cafe/20 bg-white px-6 py-3 text-sm font-semibold transition hover:border-[#1877F2] hover:text-[#1877F2]">
+            Seguir no Facebook →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ONDE ESTAMOS & HORÁRIO ===================== -->
+    <section id="onde-estamos" class="scroll-mt-20 bg-cafe py-20 text-creme sm:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal mb-12 max-w-2xl">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-nata-light">Onde Estamos &amp; Horário</p>
+          <h2 class="font-serif text-3xl font-bold sm:text-4xl lg:text-5xl">Passe por cá. A porta abre às 6h.</h2>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-5">
+          <!-- Coluna 1: Informação prática -->
+          <div class="reveal space-y-6 lg:col-span-2">
+            <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
+              <h3 class="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-nata-light">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                Morada
+              </h3>
+              <address class="mt-2 not-italic text-lg leading-relaxed">
+                Rua Professor Francisco Corujo, 139<br />
+                3830-524 Gafanha da Encarnação<br />
+                Ílhavo, Portugal
+              </address>
+            </div>
+
+            <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
+              <h3 class="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-nata-light">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                Horário
+              </h3>
+              <p class="mt-2 text-lg"><strong>Todos os dias: 06h00 – 21h00</strong></p>
+              <p class="text-creme/70">Segunda a Domingo, incluindo fins de semana.</p>
+              <p id="estado-hoje" class="mt-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-sm"></p>
+            </div>
+
+            <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
+              <h3 class="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-nata-light">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+                Telefone
+              </h3>
+              <a href="tel:+351234366423" class="mt-2 inline-block font-serif text-2xl font-bold hover:text-nata-light">+351 234 366 423</a>
+              <p class="text-xs text-creme/60">Chamada para a rede fixa nacional</p>
+            </div>
+
+            <ul class="grid grid-cols-2 gap-3 text-sm">
+              <li class="flex items-center gap-2 rounded-2xl bg-white/5 p-3 ring-1 ring-white/10"><span class="text-lg">☀️</span> Esplanada exterior</li>
+              <li class="flex items-center gap-2 rounded-2xl bg-white/5 p-3 ring-1 ring-white/10"><span class="text-lg">🛍️</span> Takeaway rápido</li>
+              <li class="col-span-2 flex items-center gap-2 rounded-2xl bg-white/5 p-3 ring-1 ring-white/10"><span class="text-lg">♿</span> Acessível a cadeiras de rodas: entrada, estacionamento e WC</li>
+              <li class="col-span-2 flex items-center gap-2 rounded-2xl bg-white/5 p-3 ring-1 ring-white/10"><span class="text-lg">💳</span> Multibanco, cartões de crédito/débito, MB Way e NFC</li>
+            </ul>
+          </div>
+
+          <!-- Coluna 2: Mapa interativo -->
+          <div class="reveal flex flex-col gap-4 lg:col-span-3">
+            <div class="relative min-h-[380px] flex-1 overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10">
+              <iframe
+                title="Mapa: Padaria e Pastelaria Satélite, Rua Professor Francisco Corujo 139, Gafanha da Encarnação"
+                src="https://www.google.com/maps?q=Padaria+e+Pastelaria+Sat%C3%A9lite,+Rua+Professor+Francisco+Corujo+139,+3830-524+Gafanha+da+Encarna%C3%A7%C3%A3o&hl=pt-PT&z=17&output=embed"
+                class="absolute inset-0 h-full w-full border-0"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Padaria+e+Pastelaria+Sat%C3%A9lite,+Rua+Professor+Francisco+Corujo+139,+3830-524+Gafanha+da+Encarna%C3%A7%C3%A3o"
+               target="_blank" rel="noopener"
+               class="inline-flex items-center justify-center gap-2 rounded-full bg-nata px-7 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-nata-dark">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg>
+              Abrir Direções no Google Maps
+            </a>
+            <p class="text-center text-sm text-creme/60">A poucos minutos da Gafanha da Nazaré, do centro de Ílhavo e da Costa Nova.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA FINAL ===================== -->
+    <section class="relative isolate overflow-hidden py-20">
+      <img src="img/montra.jpg"
+           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=2000&q=80';"
+           alt="" class="absolute inset-0 -z-20 h-full w-full object-cover" loading="lazy" />
+      <div class="absolute inset-0 -z-10 bg-nata/90 mix-blend-multiply"></div>
+      <div class="absolute inset-0 -z-10 bg-cafe/50"></div>
+      <div class="reveal mx-auto max-w-3xl px-4 text-center text-white">
+        <h2 class="font-serif text-3xl font-bold sm:text-4xl">Não fique sem o seu pastel de nata!</h2>
+        <p class="mt-4 text-lg text-white/90">Para encomendas de bolos, broas ou para guardar uns pastéis, basta ligar. Nós tratamos do resto.</p>
+        <a href="tel:+351234366423" class="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-bold text-cafe shadow-xl transition hover:-translate-y-0.5">
+          📞 234 366 423
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="bg-[#2a1a17] pb-28 pt-14 text-creme/80 md:pb-14">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
+      <div>
+        <img src="img/logo.jpg" alt="Logótipo Família Satélite" class="mb-3 h-20 w-20 rounded-full bg-white object-cover p-1" />
+        <p class="font-serif text-2xl font-bold text-white">Satélite</p>
+        <p class="text-xs uppercase tracking-[0.18em] text-creme/60">Padaria &amp; Pastelaria</p>
+        <p class="mt-4 text-sm leading-relaxed">Uma casa de família ao serviço da Gafanha da Encarnação, da Gafanha da Nazaré, de Ílhavo e da Costa Nova.</p>
+      </div>
+      <div class="text-sm">
+        <p class="mb-3 font-semibold uppercase tracking-widest text-nata-light">Contactos</p>
+        <address class="not-italic leading-relaxed">Rua Professor Francisco Corujo, 139<br />3830-524 Gafanha da Encarnação, Ílhavo</address>
+        <a href="tel:+351234366423" class="mt-2 inline-block hover:text-white">+351 234 366 423</a>
+        <p class="mt-2">Todos os dias · 06h00 – 21h00</p>
+      </div>
+      <div class="text-sm">
+        <p class="mb-3 font-semibold uppercase tracking-widest text-nata-light">Siga-nos</p>
+        <a href="https://www.facebook.com/padariapastelariasatelite/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 hover:bg-[#1877F2] hover:text-white transition">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H7v4h2v9h4v-9h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg>
+          Facebook Oficial
+        </a>
+      </div>
+    </div>
+    <p class="mx-auto mt-10 max-w-7xl border-t border-white/10 px-4 pt-6 text-center text-xs text-creme/50 sm:px-6 lg:px-8">
+      © <span id="ano"></span> Padaria e Pastelaria Satélite. Todos os direitos reservados. · Livro de Reclamações disponível no estabelecimento e em <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener" class="underline hover:text-white">livroreclamacoes.pt</a>
+    </p>
+  </footer>
+
+  <!-- ===================== BARRA DE AÇÃO MOBILE ===================== -->
+  <div class="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-cafe/10 bg-creme/95 p-3 backdrop-blur md:hidden">
+    <a href="tel:+351234366423" class="flex items-center justify-center gap-2 rounded-full bg-cafe py-3 text-sm font-semibold text-white">
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      Ligar
+    </a>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Padaria+e+Pastelaria+Sat%C3%A9lite,+Rua+Professor+Francisco+Corujo+139,+3830-524+Gafanha+da+Encarna%C3%A7%C3%A3o" target="_blank" rel="noopener"
+       class="flex items-center justify-center gap-2 rounded-full bg-nata py-3 text-sm font-semibold text-white">
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg>
+      Direções
+    </a>
+  </div>
+
+  <script>
+    // Ano no rodapé
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    // Navegação: transparente no topo, sólida ao fazer scroll
+    const header = document.getElementById('topo');
+    const navTexts = header.querySelectorAll('.nav-text, .nav-subtext, .nav-link, .nav-burger');
+    function atualizarNav() {
+      const solida = window.scrollY > 40 || !document.getElementById('menu-mobile').classList.contains('hidden');
+      header.classList.toggle('bg-creme/95', solida);
+      header.classList.toggle('backdrop-blur', solida);
+      header.classList.toggle('shadow-md', solida);
+      navTexts.forEach(el => {
+        if (el.classList.contains('nav-subtext')) {
+          el.classList.toggle('text-white/80', !solida);
+          el.classList.toggle('text-cafe/60', solida);
+        } else {
+          el.classList.toggle('text-white', !solida && !el.classList.contains('nav-link'));
+          el.classList.toggle('text-white/90', !solida && el.classList.contains('nav-link'));
+          el.classList.toggle('text-cafe', solida);
+        }
+      });
+    }
+    window.addEventListener('scroll', atualizarNav, { passive: true });
+    atualizarNav();
+
+    // Menu mobile
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu-mobile');
+    menuBtn.addEventListener('click', () => {
+      const aberto = menu.classList.toggle('hidden') === false;
+      menuBtn.setAttribute('aria-expanded', aberto);
+      atualizarNav();
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      atualizarNav();
+    }));
+
+    // Estado "Aberto agora" (hora de Portugal)
+    (function () {
+      const horaPT = new Intl.DateTimeFormat('pt-PT', { timeZone: 'Europe/Lisbon', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
+      const [h, m] = horaPT.split(':').map(Number);
+      const min = h * 60 + m;
+      const aberto = min >= 6 * 60 && min < 21 * 60;
+      const ponto = `<span class="h-2.5 w-2.5 rounded-full ${aberto ? 'bg-emerald-400' : 'bg-red-400'}"></span>`;
+      const hero = document.getElementById('estado-aberto');
+      const hoje = document.getElementById('estado-hoje');
+      hero.innerHTML = ponto + (aberto ? 'Aberto agora · fecha às 21:00' : 'Fechado agora · abre às 06:00 com pão quente');
+      hoje.innerHTML = ponto + (aberto ? 'Aberto agora' : 'Fechado agora — abrimos às 06:00');
+    })();
+
+    // Filtros das especialidades
+    const filtros = document.querySelectorAll('.filtro');
+    const produtos = document.querySelectorAll('.produto');
+    function ativar(btn) {
+      filtros.forEach(f => {
+        const on = f === btn;
+        f.setAttribute('aria-selected', on);
+        f.classList.toggle('bg-cafe', on);
+        f.classList.toggle('text-white', on);
+        f.classList.toggle('border-cafe', on);
+        f.classList.toggle('bg-white', !on);
+      });
+      const cat = btn.dataset.filtro;
+      produtos.forEach(p => {
+        p.classList.toggle('hidden', !(cat === 'todos' || p.dataset.cat === cat));
+      });
+    }
+    filtros.forEach(f => f.addEventListener('click', () => ativar(f)));
+    ativar(filtros[0]);
+
+    // Animação ao entrar no ecrã
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

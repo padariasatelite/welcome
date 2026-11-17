@@ -1,0 +1,21 @@
+Coloque aqui as fotografias reais da Satélite (JPG, ~1600px de largura) com estes nomes exatos.
+Enquanto um ficheiro não existir, o site mostra automaticamente uma imagem de reserva do Unsplash.
+
+fachada.jpg            -> Hero (fachada / esplanada, R. Prof. Francisco Corujo)
+esplanada.jpg          -> Secção "A Nossa Casa" (foto grande)
+meia-de-leite-nata.jpg -> Meia de leite + pastel de nata + croissant de chocolate
+pastel-de-nata.jpg     -> Cartão de destaque "Pastéis de Nata"
+pao-quente.jpg         -> Pão quente diário
+broa-de-milho.jpg      -> Broa de milho / chouriço
+croissants.jpg         -> Croissants
+cafe.jpg               -> Café / meia de leite
+bolo-aniversario.jpg   -> Bolos de aniversário
+bolo-comunhao.jpg      -> Comunhões & festas
+bolos-ocasiao.jpg      -> Mini bolos de ocasião
+sandes.jpg             -> Sandes
+hamburguer.jpg         -> Hambúrgueres
+pizza.jpg              -> Pizzas
+montra.jpg             -> Fundo da faixa final (montra / balcão)
+logo.jpg               -> Logótipo (navegação e rodapé)
+folar.jpg              -> Folar da Páscoa
+salgados.jpg           -> Pão recheado
