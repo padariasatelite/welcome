@@ -12,7 +12,7 @@ cafe.jpg               -> Café / meia de leite
 bolo-aniversario.jpg   -> Bolos de aniversário
 bolo-comunhao.jpg      -> Comunhões & festas
 bolos-ocasiao.jpg      -> Mini bolos de ocasião
-sandes.jpg             -> Sandes
+tosta.jpg              -> Tostas & Sandes
 hamburguer.jpg         -> Hambúrgueres
 pizza.jpg              -> Pizzas
 montra.jpg             -> Fundo da faixa final (montra / balcão)
